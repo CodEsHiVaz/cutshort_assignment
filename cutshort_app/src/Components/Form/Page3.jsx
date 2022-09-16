@@ -32,6 +32,8 @@ const Page3 = () => {
         <Stack spacing={3} pl={20} pr={20}>
           <Flex gap={7} mb={5} flexDirection={"row"} justifyContent="center">
             <Flex
+              id="test"
+              role={"button"}
               border={"1px"}
               borderColor="#664DE5"
               borderRadius={5}
@@ -42,7 +44,7 @@ const Page3 = () => {
               alignItems="left"
               alignContent={"left"}
             >
-              <span class="material-symbols-rounded">person</span>
+              <span className="material-symbols-rounded">person</span>
               <Heading as="h6" size="xs">
                 For myself
               </Heading>
@@ -51,6 +53,8 @@ const Page3 = () => {
               </Text>
             </Flex>
             <Flex
+              id="test"
+              role={"button"}
               border={"1px"}
               borderColor="#664DE5"
               borderRadius={5}
@@ -61,7 +65,7 @@ const Page3 = () => {
               alignItems="left"
               alignContent={"left"}
             >
-              <span id="icons" class="material-symbols-rounded">
+              <span id="icons" className="material-symbols-rounded">
                 groups
               </span>
               <Heading as="h6" size="xs">

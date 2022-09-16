@@ -11,3 +11,6 @@
 body{
   font-family: 'Inter', sans-serif;
 }
+#test:hover{
+outline: 1px solid #664DE5;
+}

@@ -18,7 +18,7 @@ const Page1 = () => {
   const { step, setStep } = useContext(StepContext);
 
   const navigate = useNavigate();
-  const hendelClick = () => {
+  const hendeSubmit = () => {
     setStep(step + 1);
     navigate("/page2");
   };
@@ -33,23 +33,25 @@ const Page1 = () => {
         You can always change them later.
       </Text>
 
-      <Stack maxW={"container.sm"} spacing={3} pl={20} pr={20}>
-        <FormControl>
-          <FormHelperText mb={3}>Full Name</FormHelperText>
-          <InputGroup>
-            <Input isRequired={"true"} placeholder="Steve Jobs" size="lg" />
-          </InputGroup>
-        </FormControl>
-        <FormControl size="lg">
-          <FormHelperText mb={3}>Display Name</FormHelperText>
-          <InputGroup>
-            <Input placeholder="Steve" isRequired={"true"} />
-          </InputGroup>
-        </FormControl>
-        <Button m={10} colorScheme={"brand"} onClick={hendelClick}>
-          Create Workspace
-        </Button>
-      </Stack>
+      <form onSubmit={hendeSubmit}>
+        <Stack maxW={"container.sm"} spacing={3} pl={20} pr={20}>
+          <FormControl>
+            <FormHelperText mb={3}>Full Name</FormHelperText>
+            <InputGroup>
+              <Input required={true} placeholder="Steve Jobs" size="lg" />
+            </InputGroup>
+          </FormControl>
+          <FormControl size="lg">
+            <FormHelperText mb={3}>Display Name</FormHelperText>
+            <InputGroup>
+              <Input placeholder="Steve" required={true} />
+            </InputGroup>
+          </FormControl>
+          <Button m={10} colorScheme={"brand"} type={"submit"}>
+            Create Workspace
+          </Button>
+        </Stack>
+      </form>
     </Container>
   );
 };

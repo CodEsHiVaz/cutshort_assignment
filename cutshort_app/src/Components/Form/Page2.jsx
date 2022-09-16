@@ -18,7 +18,7 @@ const Page2 = () => {
   const { step, setStep } = useContext(StepContext);
 
   const navigate = useNavigate();
-  const hendelClick = () => {
+  const hendeSubmit = () => {
     setStep(step + 1);
     navigate("/page3");
   };
@@ -33,25 +33,26 @@ const Page2 = () => {
         <Text textAlign={"center"} fontSize="sm" mb={10} mt={4}>
           You can always create another workspace later
         </Text>
-
-        <Stack spacing={3} pl={20} pr={20} mb={5}>
-          <FormControl>
-            <FormHelperText mb={3}>Workspace Name</FormHelperText>
-            <InputGroup>
-              <Input placeholder="Eden" size="lg" />
-            </InputGroup>
-          </FormControl>
-          <FormControl size="lg" mb={5}>
-            <FormHelperText mb={3}>Workspace URL(Optional)</FormHelperText>
-            <InputGroup>
-              <InputLeftAddon children="www.eden.com/" />
-              <Input placeholder="Example" />
-            </InputGroup>
-          </FormControl>
-          <Button marginTop={10} colorScheme={"brand"} onClick={hendelClick}>
-            Create Workspace
-          </Button>
-        </Stack>
+        <form onSubmit={hendeSubmit}>
+          <Stack spacing={3} pl={20} pr={20} mb={5}>
+            <FormControl>
+              <FormHelperText mb={3}>Workspace Name</FormHelperText>
+              <InputGroup>
+                <Input required={true} placeholder="Eden" size="lg" />
+              </InputGroup>
+            </FormControl>
+            <FormControl size="lg" mb={5}>
+              <FormHelperText mb={3}>Workspace URL(Optional)</FormHelperText>
+              <InputGroup>
+                <InputLeftAddon children="www.eden.com/" />
+                <Input required={true} placeholder="Example" />
+              </InputGroup>
+            </FormControl>
+            <Button marginTop={10} colorScheme={"brand"} type={"submit"}>
+              Create Workspace
+            </Button>
+          </Stack>
+        </form>
       </Container>
     </div>
   );

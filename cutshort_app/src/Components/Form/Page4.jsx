@@ -7,13 +7,22 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { StepContext } from "../../Context/StepContext";
 
 const Page4 = () => {
-  const hendelClick = () => {};
+  const { setStep } = useContext(StepContext);
+  const navigate = useNavigate();
+  const hendelClick = () => {
+    setStep(1);
+    navigate("/");
+  };
   return (
     <div>
       <Stack spacing={3} pl={20} pr={20}>
         <Flex
+        
           flexDirection={"row"}
           border={"2px"}
           borderRadius={"50%"}
@@ -27,7 +36,7 @@ const Page4 = () => {
           alignItems={"center"}
           color={"white"}
         >
-          <span class="material-symbols-rounded">done</span>
+          <span className="material-symbols-rounded">done</span>
         </Flex>
       </Stack>
 
